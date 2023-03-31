@@ -33,10 +33,4 @@ public class NegativeLoginTests extends TestUtilities {
 				"Message does not contain expected text");
 	}
 
-	@AfterMethod
-	private void tearDown() {
-		log.info("Close driver");
-		// Close browser
-		driver.quit();
-	}
 }

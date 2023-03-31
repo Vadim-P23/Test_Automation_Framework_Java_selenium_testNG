@@ -28,9 +28,4 @@ public class DropdownPage extends BasePageObject {
         log.info(selectedOption + " is selected in dropdown");
         return selectedOption;
     }
-
-
-
-
-    //private By option2 = ""
 }
