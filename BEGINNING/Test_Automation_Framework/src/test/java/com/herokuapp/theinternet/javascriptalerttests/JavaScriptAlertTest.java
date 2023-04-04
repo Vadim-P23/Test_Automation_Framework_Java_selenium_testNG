@@ -47,9 +47,10 @@ public class JavaScriptAlertTest extends TestUtilities {
         String alertMessage = alertsPage.getAlertText();
         String testMessage = "test message";
         alertsPage.enterPromptMessage(testMessage);
+        alertsPage.acceptAlert();
         String result = alertsPage.getResultText();
-        Assert.assertEquals(alertMessage, "I am a JS Prompt", "Alert message is not expected. \n" +
-                "Should be I am a JS Prompt");
+        Assert.assertEquals(alertMessage, "I am a JS prompt", "Alert message is not expected. \n" +
+                "Should be I am a JS prompt");
         Assert.assertEquals(result, "You entered: " + testMessage, "Result message is not expected \n" +
                 "You clicked: " + testMessage);
     }
