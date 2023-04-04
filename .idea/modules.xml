@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BEGINNING/advanced-selenium-webdriver/advanced-selenium-webdriver.iml" filepath="$PROJECT_DIR$/BEGINNING/advanced-selenium-webdriver/advanced-selenium-webdriver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BEGINNING/Test_Automation_Framework/advanced-selenium-webdriver.iml" filepath="$PROJECT_DIR$/BEGINNING/Test_Automation_Framework/advanced-selenium-webdriver.iml" />
     </modules>
   </component>
 </project>
