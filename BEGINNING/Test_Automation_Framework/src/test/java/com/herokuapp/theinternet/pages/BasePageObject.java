@@ -6,7 +6,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class BasePageObject {
 
@@ -67,12 +69,6 @@ public class BasePageObject {
         return driver.getCurrentUrl().equals(expectedUrl);
     }
 
-   /* public boolean isButtonAreVisible(By locator) {
-        WebElement button = driver.findElement(locator);
-        waitForVisibilityOf((By) button, 5);
-        return button.isDisplayed();
-    } */
-
     public String getText(By locator) {
         waitForVisibilityOf(locator, 5);
         return find(locator).getText();
@@ -82,6 +78,30 @@ public class BasePageObject {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.alertIsPresent());
         return driver.switchTo().alert();
+    }
+
+    public String getCurrentPageTitle() {
+        return driver.getTitle();
+    }
+
+    public void switchToWindowWithTitle(String expectedTitle) {
+        String firstWindow = driver.getWindowHandle();
+        Set<String> allWindows = driver.getWindowHandles();
+        Iterator<String> windowsIterator = allWindows.iterator();
+
+        while (windowsIterator.hasNext()) {
+            String windowHandle = windowsIterator.next().toString();
+            if (!windowHandle.equals(firstWindow)) {
+                driver.switchTo().window(windowHandle);
+                 if (getCurrentPageTitle().equals("expectedTitle")) {
+                     break;
+                 }
+            }
+        }
+    }
+
+    protected void switchToFrame(By frameLocator) {
+        driver.switchTo().frame(find(frameLocator));
     }
 
 
