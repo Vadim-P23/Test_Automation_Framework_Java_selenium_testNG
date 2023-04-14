@@ -25,7 +25,7 @@ public class FileUploaderPage extends BasePageObject{
     }
 
     public void selectingFiles(String fileName) {
-        String filePath = System.getProperty("user.dir") + "//src//main//resources//files//text" + fileName;
+        String filePath = System.getProperty("user.dir") + "//src//main//resources//files//" + fileName;
         type(filePath, chooseFile);
     }
 
