@@ -13,8 +13,7 @@ public class FileUploaderPage extends BasePageObject{
     private final By chooseFile = By.id("file-upload");
     private final By upload = By.id("file-submit");
     private final By uploadedFiles = By.id("uploaded-files");
-
-
+    
     public void openPage() {
         log.info("Opening page " + pageUrl);
         openUrl(pageUrl);
@@ -25,7 +24,7 @@ public class FileUploaderPage extends BasePageObject{
     }
 
     public void selectingFiles(String fileName) {
-        String filePath = System.getProperty("user.dir") + "//src//main//resources//files//text" + fileName;
+        String filePath = System.getProperty("user.dir") + "//src//main//resources//files//" + fileName;
         type(filePath, chooseFile);
     }
 
