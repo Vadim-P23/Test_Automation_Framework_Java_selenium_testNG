@@ -1,2 +1,6 @@
-package com.herokuapp.theinternet.pages;public class FileUploaderPage {
+package com.herokuapp.theinternet.pages;
+
+public class FileUploaderPage {
+
+
 }

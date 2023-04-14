@@ -8,6 +8,7 @@ public class UploadTests extends TestUtilities {
     @Test
     public void imageUploadTest() {
         log.info("Starting imageUploadTest");
+        //open file uploader page
     }
 
 
