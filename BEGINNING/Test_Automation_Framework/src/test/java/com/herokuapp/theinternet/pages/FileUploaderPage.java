@@ -32,9 +32,4 @@ public class FileUploaderPage extends BasePageObject{
         return getText(uploadedFiles);
     }
 
-
-
-
-
-
 }
