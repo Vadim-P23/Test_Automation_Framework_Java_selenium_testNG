@@ -115,5 +115,11 @@ public class BasePageObject {
         action.sendKeys(key).build().perform();
     }
 
+    //public void scrollToBottom() {
+      //  log.info("Scrolling");
+        //JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        //jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight");
+   // }
+
 
 }
