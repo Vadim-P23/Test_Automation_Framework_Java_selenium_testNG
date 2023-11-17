@@ -13,6 +13,10 @@ public class EditorPage extends BasePageObject{
     private final By iframe = By.xpath("//iframe");
     private final By editorLocator = By.id("tinymce");
 
+    public void switchToEditorFrame() {
+
+    }
+
     public String getEditorText() {
         String text = find(editorLocator).getText();
         return text;

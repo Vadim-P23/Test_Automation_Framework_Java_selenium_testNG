@@ -2,10 +2,8 @@ package com.herokuapp.theinternet.loginpagetest;
 
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
-import com.herokuapp.theinternet.pages.WelcomePageObject;
-import org.openqa.selenium.By;
+import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -17,7 +15,7 @@ public class NegativeLoginTests extends TestUtilities {
 		log.info("Starting negativeTest");
 
 		// open main page
-		WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
+		WelcomePage welcomePage = new WelcomePage(driver, log);
 		welcomePage.openPage();
 		log.info("Main page is opened.");
 
