@@ -1,11 +1,11 @@
 package com.herokuapp.theinternet.pages;
 
-import okhttp3.internal.cache.DiskLruCache;
+
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class WelcomePageObject extends BasePageObject{
+public class WelcomePage extends BasePageObject{
 
     private final String pageUrl = "http://the-internet.herokuapp.com/";
     private final By formAuthenticationLinkLocator = By.linkText("Form Authentication");
@@ -15,7 +15,7 @@ public class WelcomePageObject extends BasePageObject{
     private final By multipleWindows = By.linkText("Multiple Windows");
     private final By WYSIWYGEditor = By.linkText("WYSIWYG Editor");
 
-    public WelcomePageObject(WebDriver driver, Logger log) {
+    public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
 
