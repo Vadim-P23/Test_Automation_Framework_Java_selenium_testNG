@@ -38,6 +38,8 @@ public class BasePageObject {
         find(locator).click();
     }
 
+
+
     protected void type(String text, By locator) {
         waitForVisibilityOf(locator, 5);
         find(locator).sendKeys(text);
@@ -144,6 +146,11 @@ public class BasePageObject {
                         + "var source = arguments[0];\n" + "var destination = arguments[1];\n"
                         + "simulateHTML5DragAndDrop(source,destination);",
                 find(from), find(to));
+    }
+
+    protected void hoverOverElement(WebElement element) {
+        Actions action = new Actions(driver);
+        action.moveToElement(element).build().perform();
     }
 
 }

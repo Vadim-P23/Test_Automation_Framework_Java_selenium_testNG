@@ -22,8 +22,6 @@ public class DragAndDropTests extends TestUtilities {
         String columnBText = dragAndDropPage.getColumnBText();
         Assert.assertEquals(columnBText, "A", "Column B Header should be A");
 
-
-
     }
 
 }

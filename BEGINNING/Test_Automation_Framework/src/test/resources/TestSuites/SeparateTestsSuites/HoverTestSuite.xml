@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="HoverTestSuite" verbose="1">
+
+    <test name="HoverTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.hovertests.HoverTests" />
+        </classes>
+    </test>
+</suite>
