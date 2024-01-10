@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class UploadTests extends TestUtilities {
 
-    @Test
+    @Test(dataProvider = "files")
     public void imageUploadTest() {
         log.info("Starting imageUploadTest");
         FileUploaderPage fileUploaderPage = new FileUploaderPage(driver, log);
