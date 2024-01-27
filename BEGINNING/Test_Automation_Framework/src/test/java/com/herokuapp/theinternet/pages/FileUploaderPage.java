@@ -23,7 +23,7 @@ public class FileUploaderPage extends BasePageObject{
         click(upload);
     }
 
-    public void selectingFiles(String fileName) {
+    public void selectFiles(String fileName) {
         String filePath = System.getProperty("user.dir") + "//src//main//resources//files//" + fileName;
         type(filePath, chooseFile);
     }
