@@ -8,15 +8,19 @@ import org.testng.annotations.Test;
 public class UploadTests extends TestUtilities {
 
     @Test(dataProvider = "files")
-    public void imageUploadTest(int no, String fileName) {
-        log.info("Starting imageUploadTest");
+    public void filesUploadTest(int no, String fileName) {
+        log.info("Starting fileUploadTest #" + no + " for " + fileName);
+
         FileUploaderPage fileUploaderPage = new FileUploaderPage(driver, log);
         fileUploaderPage.openPage();
-        String expectedFileName = "text.txt";
-        fileUploaderPage.selectingFiles(expectedFileName);
+
+        fileUploaderPage.selectFiles(fileName);
+
         fileUploaderPage.pushUploadButton();
-        String actualFileName = fileUploaderPage.getUploadedFilesNames();
-        Assert.assertEquals(actualFileName, expectedFileName, "Failed! Files names don't match");
+
+        String fileNames = fileUploaderPage.getUploadedFilesNames();
+
+        Assert.assertTrue(fileNames.contains(fileName));
     }
 
 
