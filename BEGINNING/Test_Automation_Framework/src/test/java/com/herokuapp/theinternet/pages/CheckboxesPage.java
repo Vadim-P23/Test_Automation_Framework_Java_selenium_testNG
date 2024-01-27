@@ -35,4 +35,5 @@ public class CheckboxesPage extends BasePageObject {
         }
         return true;
     }
+
 }
