@@ -1,20 +1,17 @@
 package com.herokuapp.theinternet.base;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
+import org.testng.annotations.DataProvider;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-import com.opencsv.exceptions.CsvValidationException;
-import org.testng.annotations.DataProvider;
 
-import com.opencsv.CSVReader;
 
 public class CsvDataProviders {
 
@@ -31,7 +28,7 @@ public class CsvDataProviders {
             if (keys != null) {
                 String[] dataParts;
                 while ((dataParts = reader.readNext()) != null) {
-                    Map<String, String> testData = new HashMap<String, String>();
+                    Map<String, String> testData = new HashMap<>();
                     for (int i = 0; i < keys.length; i++) {
                         testData.put(keys[i], dataParts[i]);
                     }
@@ -44,7 +41,7 @@ public class CsvDataProviders {
         } catch (IOException e) {
             throw new RuntimeException("Could not read " + pathname + " file.\n" + e.getStackTrace().toString());
         } catch (CsvValidationException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Received CsvValidationException error: " + e.getStackTrace().toString());
         }
 
         return list.iterator();
