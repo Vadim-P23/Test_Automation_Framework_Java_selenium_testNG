@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class PositiveLoginTests extends TestUtilities {
 
 	@Test
-	public void logInTest() {mmit
+	public void logInTest() {
 		// open main page
 		WelcomePage welcomePage = new WelcomePage(driver, log);
 		welcomePage.openPage();

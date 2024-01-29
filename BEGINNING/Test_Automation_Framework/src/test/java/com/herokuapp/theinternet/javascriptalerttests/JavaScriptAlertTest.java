@@ -3,7 +3,6 @@ package com.herokuapp.theinternet.javascriptalerttests;
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.JavaScriptAlertPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -11,10 +10,7 @@ public class JavaScriptAlertTest extends TestUtilities {
 
     @Test
     public void jsAlertTest() {
-        log.info("Starting jsAlertTest");
-
         SoftAssert softAssert = new SoftAssert();
-
         WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();
         JavaScriptAlertPage alertsPage = welcomePage.clickJavaScriptAlertLink();
@@ -31,7 +27,7 @@ public class JavaScriptAlertTest extends TestUtilities {
 
     @Test
     public void jsAlertConfirmTest() {
-        log.info("Starting jsAlertConfirmTest");
+
         SoftAssert softAssert = new SoftAssert();
         WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();
@@ -49,17 +45,17 @@ public class JavaScriptAlertTest extends TestUtilities {
 
     @Test
     public void jsAlertPromptTest() {
-        log.info("Starting jsAlertPromptTest");
+
         SoftAssert softAssert = new SoftAssert();
         WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();
         JavaScriptAlertPage alertsPage = welcomePage.clickJavaScriptAlertLink();
         alertsPage.openJSAlertPrompt();
-        String alertMessage = alertsPage.getAlertText() + "[FAIL]";
+        String alertMessage = alertsPage.getAlertText();
         String testMessage = "test message";
         alertsPage.enterPromptMessage(testMessage);
         alertsPage.acceptAlert();
-        String result = alertsPage.getResultText() + "[FAIL]";
+        String result = alertsPage.getResultText();
         softAssert.assertEquals(alertMessage, "I am a JS prompt", "Alert message is not expected. \n" +
                 "Should be I am a JS prompt");
         softAssert.assertEquals(result, "You entered: " + testMessage, "Result message is not expected \n" +
